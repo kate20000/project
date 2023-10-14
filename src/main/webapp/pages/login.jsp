@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="post">
         <div>
             <span>Login</span>
             <input name = "login" id = "login" type="text"/>
