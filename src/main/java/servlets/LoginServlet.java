@@ -12,6 +12,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("errorText", "");
         req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
         resp.setContentType("text/html");
         super.doGet(req, resp);
@@ -25,7 +26,12 @@ public class LoginServlet extends HttpServlet {
         LoginService loginService = new LoginService();
         if(loginService.auth(login, pass)){
             System.out.println("true");
+            String session = loginService.createSession(login);
+
+            System.out.println(session);
         } else {
+            req.setAttribute("errorText", "error login or pass");
+            req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
             System.out.println("false");
         }
         super.doPost(req, resp);

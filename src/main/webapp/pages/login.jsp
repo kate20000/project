@@ -16,6 +16,10 @@
             <span>Password</span>
             <input name = "password" id = "password" type="text"/>
             <br>
+            <br>
+            <span>${requestScope.errorText}</span>
+            <br>
+            <br>
             <input style="color: blue" type="submit">
         </div>
     </form>

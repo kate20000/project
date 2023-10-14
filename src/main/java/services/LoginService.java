@@ -2,6 +2,8 @@ package services;
 
 import services.db.LoginDBService;
 
+import java.util.Date;
+
 public class LoginService {
 
     public Boolean auth(String login, String pass){
@@ -14,6 +16,14 @@ public class LoginService {
             return true;
         }
         return false;
+    }
+
+    public String createSession(String login){
+        HashService hashService = new HashService();
+        String session = hashService.createHash(login+new Date());
+        LoginDBService loginDBService = new LoginDBService();
+        loginDBService.createSession(session, login);
+        return session;
     }
 
 }

@@ -24,4 +24,19 @@ public class LoginDBService {
         return password;
     }
 
+    public void createSession(String session, String login) {
+        DataBaseService dataBaseService = new DataBaseService();
+        Connection connection = dataBaseService.getConnect();
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            String sql = "INSERT INTO sessions  (login, session)\n" +
+                    "VALUES ('"+login+"', '"+session+"')";
+            statement.executeQuery(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
+
 }
