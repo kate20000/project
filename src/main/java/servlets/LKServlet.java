@@ -10,12 +10,15 @@ public class LKServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String session = "no ses";
-        if(req.getHeader("session")!= null){
-            session = req.getHeader("session");
+        if(req.getSession().getAttribute("session") != null){ // если сессия есть то прокидываем в параметр
+            String session = (String) req.getSession().getAttribute("session");
+            req.setAttribute("session", session);
+            req.getRequestDispatcher("/pages/lk.jsp").forward(req, resp);
+            super.doGet(req, resp);
+        } else {
+            // если сессии нет, то на страницу авторизации
+            resp.sendRedirect(req.getContextPath() + "/login");
         }
-        req.setAttribute("session", session);
-        req.getRequestDispatcher("/pages/lk.jsp").forward(req, resp);
-        super.doGet(req, resp);
+
     }
 }

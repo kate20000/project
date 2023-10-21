@@ -27,9 +27,9 @@ public class LoginServlet extends HttpServlet {
         if(loginService.auth(employee.getLogin(), employee.getPassword())){
             loginService.logOut(employee.getLogin());
             String session = loginService.createSession(employee.getLogin());
+            req.getSession().setAttribute("session", session);
             resp.addHeader("session",session);
             resp.sendRedirect(req.getContextPath() + "/lk");
-            System.out.println(session);
         } else {
             req.setAttribute("errorText", "error login or pass");
             req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
