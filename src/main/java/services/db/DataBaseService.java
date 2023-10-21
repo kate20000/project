@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DataBaseService {
 
-    public Connection getConnect(){
+    private Connection getConnect(){
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -21,6 +21,44 @@ public class DataBaseService {
             System.out.println(e.getMessage());
         }
         return conn;
+    }
+
+    public ResultSet select(String sql){
+        Statement statement = null;
+        try {
+            statement = getConnect().createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            return rs;
+        } catch (SQLException throwables) {
+            System.out.println(throwables.getMessage());
+            return null;
+        }
+    }
+
+    public boolean insert(String sql){
+        boolean isSuccessful = false;
+        Statement statement = null;
+        try {
+            statement = getConnect().createStatement();
+            statement.executeQuery(sql);
+            isSuccessful = true;
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        }
+        return isSuccessful;
+    }
+
+    public boolean delete (String sql){
+        boolean isSuccessful = false;
+        Statement statement = null;
+        try {
+            statement = getConnect().createStatement();
+            statement.executeQuery(sql);
+            isSuccessful = true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return isSuccessful;
     }
 
 }

@@ -1,5 +1,6 @@
 package services;
 
+import model.Employee;
 import services.db.LoginDBService;
 
 import java.util.Date;
@@ -22,8 +23,13 @@ public class LoginService {
         HashService hashService = new HashService();
         String session = hashService.createHash(login+new Date());
         LoginDBService loginDBService = new LoginDBService();
-        loginDBService.createSession(session, login);
+        loginDBService.createSession(login, session);
         return session;
+    }
+
+    public void logOut(String login){
+        LoginDBService loginDBService = new LoginDBService();
+        loginDBService.cleanSession(login);
     }
 
 }
