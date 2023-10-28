@@ -38,8 +38,10 @@ public class DataBaseService {
         Statement statement = null;
         try {
             statement = getConnect().createStatement();
-            statement.executeQuery(sql);
-            isSuccessful = true;
+            int rowsAffected = statement.executeUpdate(sql);
+            if (rowsAffected > 0) {
+                isSuccessful = true;
+            }
         } catch (Exception throwables) {
             throwables.printStackTrace();
         }
@@ -51,12 +53,13 @@ public class DataBaseService {
         Statement statement = null;
         try {
             statement = getConnect().createStatement();
-            statement.executeQuery(sql);
-            isSuccessful = true;
+            int rowsAffected = statement.executeUpdate(sql);
+            if (rowsAffected > 0) {
+                isSuccessful = true;
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return isSuccessful;
     }
-
 }
