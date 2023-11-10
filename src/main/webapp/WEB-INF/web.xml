@@ -36,4 +36,20 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <url-pattern>/add-user</url-pattern>
     </servlet-mapping>
 
+
+
+<!--    rest-->
+    <servlet>
+        <servlet-name>ExampleRestServlet</servlet-name>
+        <servlet-class>servlets.rest.ExampleRestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExampleRestServlet</servlet-name>
+        <!--   здесь указываем путь запроса
+           будет обрабатываться сервлетом ExampleRestServlet (а значит классом servlets.rest.ExampleRestServlet)-->
+        <url-pattern>/api/example</url-pattern>
+    </servlet-mapping>
+
+<!--    -->
+
 </web-app>
