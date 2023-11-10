@@ -37,4 +37,18 @@ public class LoginDBService {
         dataBaseService.delete(sql);
     }
 
+    public String getUserLoginBySession(String session){
+        String login = null;
+        DataBaseService dataBaseService = new DataBaseService();
+        String sql = "select s.login from sessions s where s.\"session\" = '"+session+"'";
+        ResultSet resultSet = dataBaseService.select(sql);
+        try {
+            resultSet.next();
+            login = resultSet.getString("login");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return login;
+    }
+
 }

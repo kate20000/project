@@ -30,6 +30,7 @@ public class Employee {
     public Employee(HttpServletRequest req) {
         this.login = req.getParameter("login");
         this.password = req.getParameter("password");
+        this.fio = req.getParameter("fio");
     }
 
     public String getFio() {

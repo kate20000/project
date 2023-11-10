@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+<div style="
+border: black;
+margin-top: 20%;
+margin-left: 30%;
+">
+
     <form action="" method="post">
         <div>
             <span>Login</span>
@@ -23,5 +29,6 @@
             <input style="color: blue" type="submit">
         </div>
     </form>
+</div>
 </body>
 </html>

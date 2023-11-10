@@ -27,6 +27,11 @@ public class LoginService {
         return session;
     }
 
+    public String getLoginBySession(String session){
+        LoginDBService loginDBService = new LoginDBService();
+        return  loginDBService.getUserLoginBySession(session);
+    }
+
     public void logOut(String login){
         LoginDBService loginDBService = new LoginDBService();
         loginDBService.cleanSession(login);
