@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 public class ExampleRestServlet extends HttpServlet {
@@ -56,7 +55,7 @@ public class ExampleRestServlet extends HttpServlet {
         String json = new Gson().toJson(list);
 
         //теперь объект имеет строковый вид и его можно вернуть
-        resp.getWriter().println(list);
+        resp.getWriter().println(json);
 
     }
 
@@ -89,8 +88,9 @@ public class ExampleRestServlet extends HttpServlet {
         Map<String,Object> obj = new Gson().fromJson(json, Map.class);
 
         //ну и просто выведем в консоль (обратившись по ключу). Далее эти данные можно записать в БД
-        System.out.println(obj.get("id"));
-        System.out.println(obj.get("name"));
+        System.out.println(obj.get("login"));
+        System.out.println(obj.get("password"));
+        System.out.println(obj.get("new-data"));
 
         ///теперь сообщим, что данные получены.
 
@@ -105,10 +105,8 @@ public class ExampleRestServlet extends HttpServlet {
 
         //преобразуем в строку
         String respJson = new Gson().toJson(answerMap);
-
         resp.setContentType("application/json"); //указываем формат ответа (что это json)
         resp.setCharacterEncoding("UTF-8");//укажем кодировку
-
         //вернем клиенту
         resp.getWriter().println(respJson);
 
