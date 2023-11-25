@@ -50,6 +50,17 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <url-pattern>/api/example</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>ServiceServlet</servlet-name>
+        <servlet-class>servlets.rest.ServiceRest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServiceServlet</servlet-name>
+        <url-pattern>/service/all</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>ProjectData</servlet-name>
         <servlet-class>servlets.rest.ProjectRestServlet</servlet-class>
