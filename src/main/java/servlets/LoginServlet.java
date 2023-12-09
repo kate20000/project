@@ -1,6 +1,6 @@
 package servlets;
 
-import model.Employee;
+import model.Admin;
 import services.LoginService;
 
 import javax.servlet.ServletException;
@@ -22,16 +22,16 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getServletContext();
-        Employee employee = new Employee(req);
+        Admin employee = new Admin(req);
         LoginService loginService = new LoginService();
         if(loginService.auth(employee.getLogin(), employee.getPassword())){
             loginService.logOut(employee.getLogin());
             String session = loginService.createSession(employee.getLogin());
             req.getSession().setAttribute("session", session);
             resp.addHeader("session",session);
-            resp.sendRedirect(req.getContextPath() + "/lk");
+            resp.sendRedirect(req.getContextPath() + "/service/all");
         } else {
-            req.setAttribute("errorText", "error login or pass");
+            req.setAttribute("errorText", "Incorrect login or password");
             req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
             super.doPost(req, resp);
         }

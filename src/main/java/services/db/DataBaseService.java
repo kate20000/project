@@ -4,15 +4,15 @@ import java.sql.*;
 
 public class DataBaseService {
 
-    private Connection getConnect(){
+    static Connection getConnect(){
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        final String url = "jdbc:postgresql://217.107.219.154:49307/bonch_test";
-        final String user = "bonch_test";
-        final String password = "1234";
+        final String url = "jdbc:postgresql://217.107.219.154:49307/bonch_2105323";
+        final String user = "bonch_2105323";
+        final String password = "JnKtmEGhhLU=";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -47,8 +47,7 @@ public class DataBaseService {
         }
         return isSuccessful;
     }
-
-    public boolean delete (String sql){
+    public static boolean delete(String sql){
         boolean isSuccessful = false;
         Statement statement = null;
         try {

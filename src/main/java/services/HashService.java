@@ -13,9 +13,7 @@ public class HashService {
             e.printStackTrace();
         }
 
-        // Обновление хеша с байтами пароля
         byte[] hashedBytes = digest.digest(text.getBytes());
-        // Преобразование байтов хеша в строку в формате шестнадцатеричного представления
         StringBuilder sb = new StringBuilder();
         for (byte b : hashedBytes) {
             sb.append(String.format("%02x", b));

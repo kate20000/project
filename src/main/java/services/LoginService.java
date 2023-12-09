@@ -1,6 +1,6 @@
 package services;
 
-import model.Employee;
+import model.Admin;
 import services.db.LoginDBService;
 
 import java.util.Date;

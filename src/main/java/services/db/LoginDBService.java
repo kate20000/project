@@ -8,7 +8,7 @@ public class LoginDBService {
     public String getPassByLogin(String login){
         String password = null;
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "select e.\"password\" from employees e where e.login = '"+login+"' ";
+        String sql = "select a.\"password\" from admin a where a.login = '"+login+"' ";
         ResultSet resultSet = dataBaseService.select(sql);
         try {
             resultSet.next();
@@ -21,12 +21,12 @@ public class LoginDBService {
 
     public void createSession(String login, String session) {
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "INSERT INTO sessions  (login, session)\n" +
+        String sql = "INSERT INTO sessions (login, session)\n" +
                     "VALUES ('"+login+"', '"+session+"')";
         if(dataBaseService.insert(sql)){
-            // логика на успех
+
         } else {
-            // ошибка
+
         }
 
     }
