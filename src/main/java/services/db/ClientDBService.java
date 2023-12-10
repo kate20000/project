@@ -24,17 +24,24 @@ public class ClientDBService {
     }
 
 
-    public static Boolean update(Clients service) {
-        Boolean isSuccess = false;
-        DataBaseService dataBaseService1 = new DataBaseService();
-        String sql = "UPDATE clients SET name = ?, phone = ? WHERE id = ?";
-        if (dataBaseService1.insert(sql)) {
-            isSuccess = true;
-        } else {
-            isSuccess = false;
-        }
-        return isSuccess;
+    public static int update(Clients client) {
+        try{
+            Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://217.107.219.154:49307/bonch_2105323", "bonch_2105323", "JnKtmEGhhLU=")) {
 
+                String sql = "UPDATE clients SET name = ?, phone = ? WHERE client_id = ?";
+                try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+                    preparedStatement.setString(1, client.getName());
+                    preparedStatement.setString(2, client.getPhone());
+                    preparedStatement.setInt(3, client.getId());
+                    return  preparedStatement.executeUpdate();
+                }
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        return 0;
     }
 
     public static Clients selectOne(int id) {
@@ -43,7 +50,7 @@ public class ClientDBService {
             Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection("jdbc:postgresql://217.107.219.154:49307/bonch_2105323", "bonch_2105323", "JnKtmEGhhLU=")) {
 
-                String sql = "SELECT * FROM products WHERE id=?";
+                String sql = "SELECT * FROM clients WHERE client_id=?";
                 try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
                     preparedStatement.setInt(1, id);
                     ResultSet resultSet = preparedStatement.executeQuery();

@@ -16,7 +16,6 @@ public class AdminDBService {
         } else {
             // ошибка
         }
-
         return isSuccess;
     }
 

@@ -15,7 +15,7 @@ import model.Clients;
 import services.BServiceService;
 import services.db.ClientDBService;
 
-@WebServlet("/")
+@WebServlet("/indexClient")
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

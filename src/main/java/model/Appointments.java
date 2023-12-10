@@ -14,15 +14,25 @@ public class Appointments {
     private Date date;
     private Time time;
     private String phone;
+    private int isActive;
 
-
-    public Appointments(int id, String phone, String name) {
+    public Appointments() {
     }
-
+    public Appointments(int id, String name, String phone, String car, int year, Date date, Time time, String service) {
+        this.id = id;
+        this.name = name;
+        this.year = year;
+        this.car = car;
+        this.service = service;
+        this.date = date;
+        this.time = time;
+        this.phone = phone;
+        this.isActive = isActive;
+        this.id = id;
+    }
     public Appointments(String name, String phone, String car, int year, Date date, Time time, String service) {
         this.name = name;
         this.year = year;
-        this.id = id;
         this.car = car;
         this.service = service;
         this.date = date;
@@ -93,4 +103,11 @@ public class Appointments {
         this.time = time;
     }
 
+    public Integer getActive() {
+        return isActive;
+    }
+
+    public void setActive(Integer isActive) {
+        this.isActive = isActive;
+    }
 }

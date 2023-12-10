@@ -6,6 +6,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
     <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>servlets.MainServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
@@ -16,22 +26,23 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ServiceServlet</servlet-name>
+        <servlet-name>serviceAll</servlet-name>
         <servlet-class>servlets.rest.ServiceRest</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ServiceServlet</servlet-name>
-        <url-pattern>/service/all</url-pattern>
+        <servlet-name>serviceAll</servlet-name>
+        <url-pattern>/service</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>index</servlet-name>
+        <servlet-name>indexClient</servlet-name>
         <servlet-class>servlets.IndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>index</servlet-name>
+        <servlet-name>indexClient</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>addClient</servlet-name>
         <servlet-class>servlets.AddClientServlet</servlet-class>
@@ -60,6 +71,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>create</servlet-name>
         <url-pattern>/create</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>aftercreate</servlet-name>
+        <servlet-class>servlets.ClientServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>aftercreate</servlet-name>
+        <url-pattern>/aftercreate</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>deleteClient</servlet-name>
         <servlet-class>servlets.DeleteServlet</servlet-class>
@@ -70,6 +91,15 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>priceAll</servlet-name>
+        <servlet-class>servlets.rest.ClientRest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>priceAll</servlet-name>
+        <url-pattern>/price</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>CORSFilter</filter-name>

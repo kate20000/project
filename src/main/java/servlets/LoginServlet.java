@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
             String session = loginService.createSession(employee.getLogin());
             req.getSession().setAttribute("session", session);
             resp.addHeader("session",session);
-            resp.sendRedirect(req.getContextPath() + "/service/all");
+            resp.sendRedirect(req.getContextPath() + "/service");
         } else {
             req.setAttribute("errorText", "Incorrect login or password");
             req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);

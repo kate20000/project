@@ -30,7 +30,6 @@ public class LoginDBService {
         }
 
     }
-
     public void cleanSession(String login){
         DataBaseService dataBaseService = new DataBaseService();
         String sql = "delete from sessions s where s.login = '"+login+"'";
