@@ -29,7 +29,6 @@ public class ClientServlet extends HttpServlet {
             String car = request.getParameter("car");
             String dateStr = request.getParameter("date");
 
-            // Ensure the dateStr is not null before parsing
             if (dateStr == null || dateStr.isEmpty()) {
                 throw new IllegalArgumentException("Date parameter is missing or empty");
             }
@@ -39,12 +38,11 @@ public class ClientServlet extends HttpServlet {
 
             String timeStr = request.getParameter("time");
 
-            // Ensure the timeStr is not null before parsing
             if (timeStr == null || timeStr.isEmpty()) {
                 throw new IllegalArgumentException("Time parameter is missing or empty");
             }
 
-            Time time = Time.valueOf(timeStr + ":00"); // Добавляем секунды
+            Time time = Time.valueOf(timeStr + ":00");
             String problem = request.getParameter("problem");
             int year = Integer.parseInt(request.getParameter("year"));
 

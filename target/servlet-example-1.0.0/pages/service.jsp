@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #dfe1e7;
             margin: 20px;
         }
 
@@ -38,7 +38,6 @@
             background-color: #007bff;
             color: #fff;
         }
-
         tbody tr:nth-child(even) {
             background-color: #f2f2f2;
         }
@@ -47,7 +46,7 @@
 <body>
 <div class="container">
     <h2>Service Appointments</h2>
-    <p><a href='<c:url value="/index" />' class="btn btn-primary">My Clients</a></p>
+    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">My Clients</a><a href='<c:url value="/create" />' class="btn btn-primary">Add new appointment</a></p></p>
     <table class="table table-bordered" id="appointments">
         <thead>
         <tr>
@@ -59,7 +58,6 @@
             <th>Date</th>
             <th>Time</th>
             <th>Service</th>
-
         </tr>
         </thead>
         <tbody>
@@ -73,8 +71,10 @@
                 <td>${appointments.date}</td>
                 <td>${appointments.time}</td>
                 <td>${appointments.service}</td>
-
-            </tr>
+                <td class="btn-group">
+                    <form method="post" action='<c:url value="/deleteapp" />' style="display:inline;">
+                        <input type="submit" value="Remove" class="btn btn-danger"></form>
+                </td>            </tr>
         </c:forEach>
         </tbody>
     </table>

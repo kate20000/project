@@ -103,7 +103,6 @@ public class ClientDBService {
             isSuccess = false;
         }
         return isSuccess;
-
     }
 
     public static int delete(int id) {

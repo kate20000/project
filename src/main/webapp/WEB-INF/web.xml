@@ -101,6 +101,14 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <url-pattern>/price</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>deleteApp</servlet-name>
+        <servlet-class>servlets.DeleteAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteApp</servlet-name>
+        <url-pattern>/deleteapp</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>CORSFilter</filter-name>
         <filter-class>servlets.CORSFilter</filter-class>

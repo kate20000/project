@@ -56,10 +56,8 @@
                 <td align="center">${services.id}</td>
                 <td align="center">${services.service}</td>
                 <td align="center">${services.price}</td>
-                <td class="btn-group"></td>
             </tr>
         </c:forEach>
-
         </tbody>
     </table><p><a href='<c:url value="/create" />' class="btn btn-primary">Create service appointment</a></p>
 </div>
