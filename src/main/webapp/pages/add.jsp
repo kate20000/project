@@ -1,9 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Client</title>
+    <title>Добавление клиента</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
@@ -53,17 +54,17 @@
 </head>
 <body>
 <div class="container form-container">
-    <h3>New Client</h3>
+    <h3>Новый клиент</h3>
     <form method="post">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Имя</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">Телефон</label>
             <input type="tel" class="form-control" id="phone" name="phone" required>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
     </form>
 </div>
 </body>

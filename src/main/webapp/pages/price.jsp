@@ -1,9 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Clients</title>
+    <title>Клиенты</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
@@ -41,13 +42,13 @@
 </head>
 <body>
 <div>
-    <h2>Our Services</h2>
+    <h2>Наши услуги</h2>
     <table>
         <thead>
         <tr>
-            <th>Code</th>
-            <th>Service</th>
-            <th>Price</th>
+            <th>Код</th>
+            <th>Услуга</th>
+            <th>Цена</th>
         </tr>
         </thead>
         <tbody>
@@ -59,7 +60,7 @@
             </tr>
         </c:forEach>
         </tbody>
-    </table><p><a href='<c:url value="/create" />' class="btn btn-primary">Create service appointment</a></p>
+    </table><p><a href='<c:url value="/create" />' class="btn btn-primary">Оставить заявку на обслуживание</a></p>
 </div>
 </body>
 </html>

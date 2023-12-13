@@ -20,6 +20,8 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         ArrayList<Clients> clients = ClientDBService.select();
         request.setAttribute("clients", clients);
         getServletContext().getRequestDispatcher("/pages/index.jsp").forward(request, response);

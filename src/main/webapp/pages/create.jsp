@@ -1,9 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form for Service Appointment</title>
+    <title>Форма для записи</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -60,7 +61,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <h2>Create Appointment</h2>
+        <h2>Создание заявки</h2>
     </div>
     <div class="row">
         <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
@@ -70,35 +71,35 @@
     </div>
     <form method="post">
         <div class="row">
-            <label for="phone">Phone</label>
+            <label for="phone">Телефон</label>
             <input type="tel" pattern="\+7\s?\(?\d{3}\)?\s?\d{3}[-]?\d{2}[-]?\d{2}" placeholder="+7 (900) 000-00-00" name="phone" class="form-control" id="phone" required>
         </div>
         <div class="row">
-            <label for="name">Name</label>
+            <label for="name">Имя</label>
             <input type="text" name="name" class="form-control" id="name">
         </div>
         <div class="row">
-            <label for="problem">Service</label>
+            <label for="problem">Услуга (проблема)</label>
             <input type="text" name="problem" class="form-control" id="problem">
         </div>
         <div class="row">
-            <label for="car">Car</label>
+            <label for="car">Машина</label>
             <input type="text" class="form-control" id="car" name="car">
         </div>
         <div class="row">
-            <label for="year">Year of Car</label>
+            <label for="year">Год выпуска</label>
             <input type="number" value="2000" name="year" class="form-control" id="year">
         </div>
         <div class="row">
-            <label for="date">Date</label>
+            <label for="date">Дата</label>
             <input type="date" value="2023-07-22" name="date" class="form-control" id="date">
         </div>
         <div class="row">
-            <label for="time">Time</label>
+            <label for="time">Время</label>
             <input type="time" name="time" min="10:00" max="18:00" value="10:00" class="form-control" id="time">
         </div>
         <div class="row">
-            <input type="submit" value="Send">
+            <input type="submit" value="Отправить">
         </div>
     </form>
 </div>

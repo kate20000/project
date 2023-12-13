@@ -21,6 +21,8 @@ public class ServiceRest extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         ArrayList<Appointments> appointments = BServiceDBService.select();
         req.setAttribute("appointments", appointments);
         getServletContext().getRequestDispatcher("/pages/service.jsp").forward(req, resp);

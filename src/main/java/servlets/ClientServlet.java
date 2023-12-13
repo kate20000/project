@@ -15,6 +15,8 @@ import java.util.Date;
 
 public class ClientServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         req.setAttribute("errorText", "");
         req.getRequestDispatcher("/pages/create.jsp").forward(req, resp);
         resp.setContentType("text/html");
@@ -23,6 +25,8 @@ public class ClientServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         try {
             String name = request.getParameter("name");
             String phone = request.getParameter("phone");

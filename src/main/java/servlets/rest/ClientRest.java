@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class ClientRest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         ArrayList<Services> services = BServiceDBService.all();
         req.setAttribute("services", services);
         getServletContext().getRequestDispatcher("/pages/price.jsp").forward(req, resp);

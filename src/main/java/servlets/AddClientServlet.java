@@ -17,12 +17,15 @@ public class AddClientServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         request.setCharacterEncoding("UTF-8");
+         response.setCharacterEncoding("UTF-8");
          getServletContext().getRequestDispatcher("/pages/add.jsp").forward(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         try {
             String name = request.getParameter("name");
             String phone = request.getParameter("phone");

@@ -13,6 +13,8 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         req.setAttribute("errorText", "");
         req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
         resp.setContentType("text/html");
@@ -21,6 +23,8 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         req.getServletContext();
         Admin employee = new Admin(req);
         LoginService loginService = new LoginService();

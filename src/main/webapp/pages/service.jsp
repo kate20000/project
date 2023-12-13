@@ -1,10 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Appointments</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Заявка на обслуживание</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
@@ -46,19 +49,19 @@
 </head>
 <body>
 <div class="container">
-    <h2>Service Appointments</h2>
-    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">My Clients</a> <a href='<c:url value="/create" />' class="btn btn-primary">Add new appointment</a></p></p>
+    <h2>Заявки на обслуживание</h2>
+    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">Мои клиенты</a> <a href='<c:url value="/create" />' class="btn btn-primary">Добавить новую заявку</a></p></p>
     <table class="table table-bordered" id="appointments">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Car</th>
-            <th>Year</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Service</th>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Машина</th>
+            <th>Год</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Услуга</th>
         </tr>
         </thead>
         <tbody>
@@ -74,7 +77,7 @@
                 <td>${appointments.service}</td>
                 <td class="btn-group">
                     <form method="post" action='<c:url value="/deleteapp" />' style="display:inline;">
-                        <input type="submit" value="Remove" class="btn btn-danger"></form>
+                        <input type="submit" value="Удалить" class="btn btn-danger"></form>
                 </td>
             </tr>
         </c:forEach>
