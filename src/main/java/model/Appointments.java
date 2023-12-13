@@ -14,7 +14,7 @@ public class Appointments {
     private Date date;
     private Time time;
     private String phone;
-    private int isActive;
+
 
     public Appointments() {
     }
@@ -27,7 +27,6 @@ public class Appointments {
         this.date = date;
         this.time = time;
         this.phone = phone;
-        this.isActive = isActive;
         this.id = id;
     }
     public Appointments(String name, String phone, String car, int year, Date date, Time time, String service) {
@@ -103,11 +102,5 @@ public class Appointments {
         this.time = time;
     }
 
-    public Integer getActive() {
-        return isActive;
-    }
 
-    public void setActive(Integer isActive) {
-        this.isActive = isActive;
-    }
 }

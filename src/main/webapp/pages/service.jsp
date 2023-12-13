@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #dfe1e7;
+            background-color: #e3e5e8;
             margin: 20px;
         }
 
@@ -18,6 +18,7 @@
         }
 
         h2 {
+            text-align: center;
             color: #007bff;
         }
 
@@ -46,7 +47,7 @@
 <body>
 <div class="container">
     <h2>Service Appointments</h2>
-    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">My Clients</a><a href='<c:url value="/create" />' class="btn btn-primary">Add new appointment</a></p></p>
+    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">My Clients</a> <a href='<c:url value="/create" />' class="btn btn-primary">Add new appointment</a></p></p>
     <table class="table table-bordered" id="appointments">
         <thead>
         <tr>
@@ -74,7 +75,8 @@
                 <td class="btn-group">
                     <form method="post" action='<c:url value="/deleteapp" />' style="display:inline;">
                         <input type="submit" value="Remove" class="btn btn-danger"></form>
-                </td>            </tr>
+                </td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>

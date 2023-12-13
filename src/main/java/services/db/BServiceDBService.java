@@ -23,15 +23,14 @@ public class BServiceDBService {
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM appointments");
                 while (resultSet.next()) {
-                    Integer id =  resultSet.getInt(9);
+                    Integer id =  resultSet.getInt(8);
                     String name = resultSet.getString(1);
                     String phone = resultSet.getString(2);
                     String car = resultSet.getString(3);
                     Integer year =  resultSet.getInt(4);
                     Date date = resultSet.getDate(5);
                     Time time =  resultSet.getTime(6);
-                    //Integer isActive = resultSet.getInt(7);
-                    String problem =  resultSet.getString(8);
+                    String problem =  resultSet.getString(7);
                     Appointments appointment = new Appointments(id, name, phone, car, year, date, time, problem);
                     appointments.add(appointment);
                 }
