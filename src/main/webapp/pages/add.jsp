@@ -39,7 +39,7 @@
         }
 
         input[type="submit"] {
-            background-color: #337ab7;
+            background-color: #657d9c;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -48,7 +48,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #286090;
+            background-color: #657d9c;
         }
     </style>
 </head>

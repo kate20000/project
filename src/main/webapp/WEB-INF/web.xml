@@ -73,15 +73,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>aftercreate</servlet-name>
-        <servlet-class>servlets.ClientServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>aftercreate</servlet-name>
-        <url-pattern>/aftercreate</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>deleteClient</servlet-name>
         <servlet-class>servlets.DeleteServlet</servlet-class>
     </servlet>

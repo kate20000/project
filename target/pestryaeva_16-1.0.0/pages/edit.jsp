@@ -24,7 +24,7 @@
         }
 
         .submit-btn {
-            color: #007bff;
+            color :#657d9c;
         }
     </style>
 </head>

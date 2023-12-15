@@ -46,7 +46,6 @@ public class EditServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/index");
         }
         catch(Exception ex) {
-
             getServletContext().getRequestDispatcher("/pages/notfound.jsp").forward(request, response);
         }
     }

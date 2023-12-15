@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e3e5e8;
+            background-color: #f8f7f7;
             margin: 20px;
         }
 
@@ -22,11 +22,11 @@
 
         h2 {
             text-align: center;
-            color: #007bff;
+            color: #657d9c;
         }
 
         .btn-primary {
-            background-color: #007bff;
+            background-color: #657d9c;
             color: #fff;
         }
 
@@ -39,11 +39,11 @@
         }
 
         thead {
-            background-color: #007bff;
+            background-color: #657d9c;
             color: #fff;
         }
         tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -62,22 +62,25 @@
             <th>Дата</th>
             <th>Время</th>
             <th>Услуга</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="appointments" items="${appointments}">
+        <c:forEach var="appointment" items="${appointments}">
             <tr>
-                <td>${appointments.id}</td>
-                <td>${appointments.name}</td>
-                <td>${appointments.phone}</td>
-                <td>${appointments.car}</td>
-                <td>${appointments.year}</td>
-                <td>${appointments.date}</td>
-                <td>${appointments.time}</td>
-                <td>${appointments.service}</td>
-                <td class="btn-group">
-                    <form method="post" action='<c:url value="/deleteapp" />' style="display:inline;">
-                        <input type="submit" value="Удалить" class="btn btn-danger"></form>
+                <td>${appointment.id}</td>
+                <td>${appointment.name}</td>
+                <td>${appointment.phone}</td>
+                <td>${appointment.car}</td>
+                <td>${appointment.year}</td>
+                <td>${appointment.date}</td>
+                <td>${appointment.time}</td>
+                <td>${appointment.service}</td>
+                <td class="btn-group text-center border-0" style="padding: 0;">
+                    <form method="post" action='<c:url value="/deleteapp" />' style="margin: 0; padding: 0; display:inline; border: none; width: 100%;">
+                        <input type="hidden" name="id" value="${appointment.id}">
+                        <button type="submit" class="btn btn-danger border-0" style="margin-left: 30px; width: 100%; display: inline-block; text-align: center;">Удалить</button>
+                    </form>
                 </td>
             </tr>
         </c:forEach>

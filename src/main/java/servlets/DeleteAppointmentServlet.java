@@ -23,7 +23,7 @@ public class DeleteAppointmentServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/service");
         }
         catch(Exception ex) {
-            getServletContext().getRequestDispatcher("/notfound.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/pages/notfound.jsp").forward(request, response);
         }
     }
 }

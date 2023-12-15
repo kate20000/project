@@ -20,7 +20,7 @@
             width: 50%;
             margin-left: auto;
             margin-right: auto;
-            background-color: #fff; /* Optional: Set a background color for the container */
+            background-color: #fff;
         }
 
         .form-group {
@@ -32,7 +32,7 @@
         }
 
         .submit-btn {
-            color: #007bff;
+            color: #f4f6f8;
         }
     </style>
 </head>

@@ -19,14 +19,17 @@
 
         th, td {
             border: 1px solid #dddddd;
-            text-align: left;
+            text-align: center;
             padding: 8px;
         }
 
         th {
             background-color: #f2f2f2;
         }
-
+        h2 {
+            text-align: center;
+            color: #657d9c;
+        }
         a {
             text-decoration: none;
         }

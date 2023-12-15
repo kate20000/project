@@ -53,7 +53,7 @@ public class ClientServlet extends HttpServlet {
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             Appointments appointment = new Appointments(name, phone, car, year, sqlDate, time, problem);
             ClientDBService.create(appointment);
-            response.sendRedirect(request.getContextPath() + "/aftercreate");
+            getServletContext().getRequestDispatcher("/pages/after.jsp").forward(request, response);
         } catch (ParseException | IllegalArgumentException ex) {
             request.setAttribute("errorMessage", "Invalid date or time format");
             getServletContext().getRequestDispatcher("/create.jsp").forward(request, response);

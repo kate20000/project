@@ -79,7 +79,7 @@ public class BServiceDBService {
                 String sql = "DELETE FROM appointments WHERE appointment_id = ?";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setInt(1, id);
-                    return  preparedStatement.executeUpdate();
+                    return preparedStatement.executeUpdate();
                 }
             }
         }

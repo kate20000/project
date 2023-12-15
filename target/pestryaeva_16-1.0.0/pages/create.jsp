@@ -40,7 +40,7 @@
         }
 
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #657d9c;
             color: #fff;
             padding: 10px 15px;
             border: none;
@@ -49,7 +49,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #657d9c;
         }
 
         p {
@@ -92,7 +92,7 @@
         </div>
         <div class="row">
             <label for="date">Дата</label>
-            <input type="date" value="2023-07-22" name="date" class="form-control" id="date">
+            <input type="date" value="2023-12-23" name="date" class="form-control" id="date">
         </div>
         <div class="row">
             <label for="time">Время</label>
