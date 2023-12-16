@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Страница не найдена</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -21,6 +22,6 @@
     </style>
 </head>
 <body>
-<h2>Страница не найдена</h2>
+<h2>Ваша заявка успешно отправлена!</h2>
 </body>
 </html>

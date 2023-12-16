@@ -2,12 +2,52 @@ package services.db;
 
 import model.Appointments;
 import model.Clients;
+import model.Product;
 import model.Services;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class BServiceDBService {
+
+    public static ArrayList<Product> selectProduct() {
+        ArrayList<Product> products = new ArrayList<Product>();
+        try {
+            Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://217.107.219.154:49307/bonch_2105323", "bonch_2105323", "JnKtmEGhhLU=")) {
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM products");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    String prod = resultSet.getString(2);
+                    int price = resultSet.getInt(3);
+                    Product product = new Product(prod, price);
+                    products.add(product);
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        return products;
+    }
+
+    public static int deleteOrder(int id) {
+        try{
+            Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://217.107.219.154:49307/bonch_2105323", "bonch_2105323", "JnKtmEGhhLU=")) {
+                String sql = "DELETE FROM orders WHERE order_id = ?";
+                try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+                    preparedStatement.setInt(1, id);
+                    return preparedStatement.executeUpdate();
+                }
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        return 0;
+    }
+
 
     public ResultSet allService(){
         DataBaseService dataBaseService = new DataBaseService();

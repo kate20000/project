@@ -4,13 +4,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Клиенты</title>
+    <title>Услуги</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
             margin: 5%;
         }
-
+        h2 {
+            text-align: center;
+            color: black;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -19,14 +22,10 @@
 
         th, td {
             border: 1px solid #dddddd;
-            text-align: left;
+            text-align: center;
             padding: 8px;
         }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
+        
         a {
             text-decoration: none;
         }
@@ -37,6 +36,14 @@
 
         .btn-group a, .btn-group form {
             margin-right: 10px;
+        }
+        thead {
+            background-color: #657d9c;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #657d9c;
+            color: #fff;
         }
     </style>
 </head>

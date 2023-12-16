@@ -50,7 +50,7 @@
 <body>
 <div class="container">
     <h2>Заявки на обслуживание</h2>
-    <p style="display:inline;"><a href='<c:url value="/index" />' class="btn btn-primary">Мои клиенты</a> <a href='<c:url value="/create" />' class="btn btn-primary">Добавить новую заявку</a></p></p>
+    <p style="display:inline;"><a href='<c:url value="/create" />' class="btn btn-primary">Добавить новую заявку</a> <a href='<c:url value="/index" />' class="btn btn-primary">Мои клиенты</a> <a href='<c:url value="/order" />' class="btn btn-primary">Мои заказы</a></p>
     <table class="table table-bordered" id="appointments">
         <thead>
         <tr>

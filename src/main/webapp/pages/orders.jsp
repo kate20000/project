@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Клиенты</title>
+    <title>Заказы</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body {
@@ -45,26 +45,29 @@
 </head>
 <body>
 <div>
-    <h2>Список клиентов</h2>
-    <p><a href='<c:url value="/add" />' class="btn btn-primary">Добавить нового клиента</a> <a href='<c:url value="/order" />' class="btn btn-primary">Мои заказы</a></p>
+    <h2>Мои заказы</h2>
+    <p><a href='<c:url value="/addorder" />' class="btn btn-primary">Добавить новый заказ</a></p>
     <table>
         <thead>
         <tr>
+            <th>Код</th>
+            <th>Заказ</th>
+            <th>Количество</th>
             <th>Телефон</th>
-            <th>Имя</th>
             <th>Действия</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="clients" items="${clients}">
+        <c:forEach var="order" items="${orders}">
             <tr>
-                <td>${clients.phone}</td>
-                <td>${clients.name}</td>
-                <td class="btn-group">
-                    <a href='<c:url value="/edit?id=${clients.id}" />' class="btn btn-info">Редактировать</a>
-                    <form method="post" action='<c:url value="/delete" />' style="display:inline;">
-                        <input type="hidden" name="id" value="${clients.id}">
-                        <input type="submit" value="Удалить" class="btn btn-danger">
+                <td>${order.id}</td>
+                <td>${order.order}</td>
+                <td>${order.amount}</td>
+                <td>${order.phone}</td>
+                <td class="btn-group text-center border-0" style="padding: 0;">
+                    <form method="post" action='<c:url value="/deleteord" />' style="margin: 0; padding: 0; display:inline; border: none; width: 100%;">
+                        <input type="hidden" name="id" value="${order.id}">
+                        <button type="submit" class="btn btn-danger border-0" style="width: 100%; display: inline-block; text-align: center;">Удалить</button>
                     </form>
                 </td>
             </tr>

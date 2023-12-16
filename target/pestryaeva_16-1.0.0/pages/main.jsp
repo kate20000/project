@@ -18,6 +18,7 @@
 
         .footer h3 {
             color: #faf8f8;
+            text-align: center;
         }
 
         .list-icons p {
@@ -67,6 +68,9 @@
                 <a class="nav-link" href='<c:url value="/price" />'>Список услуг</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href='<c:url value="/product" />'>Запчасти</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href='<c:url value="/create" />'>Оставить заявку на обслуживание</a>
             </li>
         </ul>
@@ -77,12 +81,14 @@
     <h2 class="text-center">Добро пожаловать в Автосервис!</h2><br><br>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <p class="text-center">Вы можете оставить заявку на обслуживание, перейдя по кнопке ниже, или просмотреть список услуг и цены на них.</p>
+            <p class="text-center">Вы можете оставить заявку на обслуживание, оформить заказ или просмотреть список услуг и цены на них.</p>
         </div>
     </div>
     <div class="btn-group d-flex justify-content-center">
         <a href='<c:url value="/login" />' class="btn btn-primary mx-2">Вход для админа</a>
         <a href='<c:url value="/price" />' class="btn btn-primary mx-2">Список услуг</a>
+        <a href='<c:url value="/product" />' class="btn btn-primary mx-2">Запчасти</a>
+        <a href='<c:url value="/addorder" />' class="btn btn-primary mx-2">Оформить заказ</a>
         <a href='<c:url value="/create" />' class="btn btn-primary mx-2">Оставить заявку на обслуживание</a>
     </div>
 </div></div><br><br>
@@ -94,7 +100,7 @@
 
 <footer class="footer fixed-bottom">
     <div class="container">
-        <h3>  Pilot Auto Repair</h3>
+        <h3>Pilot Auto Repair</h3>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="footer-location-data">

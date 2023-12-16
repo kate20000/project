@@ -51,7 +51,14 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>addClient</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>addOrder</servlet-name>
+        <servlet-class>servlets.AddOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addOrder</servlet-name>
+        <url-pattern>/addorder</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>editClient</servlet-name>
         <servlet-class>servlets.EditServlet</servlet-class>
@@ -83,6 +90,25 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>deleteOrder</servlet-name>
+        <servlet-class>servlets.DeleteOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteOrder</servlet-name>
+        <url-pattern>/deleteord</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productAll</servlet-name>
+        <servlet-class>servlets.rest.ProductRest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>productAll</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>priceAll</servlet-name>
         <servlet-class>servlets.rest.ClientRest</servlet-class>
     </servlet>
@@ -90,6 +116,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     <servlet-mapping>
         <servlet-name>priceAll</servlet-name>
         <url-pattern>/price</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ordersAll</servlet-name>
+        <servlet-class>servlets.OrdersServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ordersAll</servlet-name>
+        <url-pattern>/order</url-pattern>
     </servlet-mapping>
 
     <servlet>

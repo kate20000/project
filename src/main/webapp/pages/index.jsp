@@ -46,7 +46,7 @@
 <body>
 <div>
     <h2>Список клиентов</h2>
-    <p><a href='<c:url value="/add" />' class="btn btn-primary">Добавить нового клиента</a></p>
+    <p><a href='<c:url value="/add" />' class="btn btn-primary">Добавить нового клиента</a> <a href='<c:url value="/order" />' class="btn btn-primary">Мои заказы</a></p>
     <table>
         <thead>
         <tr>

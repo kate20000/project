@@ -1,6 +1,8 @@
 package services.db;
 import model.Appointments;
 import model.Clients;
+import model.Order;
+import model.Product;
 
 import java.sql.*;
 
@@ -78,7 +80,6 @@ public class ClientDBService {
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM clients");
                 while (resultSet.next()) {
-
                     String name = resultSet.getString(1);
                     String phone = resultSet.getString(2);
                     int id = resultSet.getInt(3);
@@ -120,5 +121,40 @@ public class ClientDBService {
             System.out.println(ex);
         }
         return 0;
+    }
+
+    public static ArrayList<Order> show() {
+        ArrayList<Order> orders = new ArrayList<Order>();
+        try {
+            Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://217.107.219.154:49307/bonch_2105323", "bonch_2105323", "JnKtmEGhhLU=")) {
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    String ord = resultSet.getString(2);
+                    int amount = resultSet.getInt(3);
+                    String phone = resultSet.getString(4);
+                    Order order = new Order(id, ord, amount, phone);
+                    orders.add(order);
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        return orders;
+    }
+
+    public static boolean insertOrd(Order order) {
+        boolean isSuccess = false;
+        DataBaseService dataBaseService = new DataBaseService();
+        String sql = "INSERT INTO orders (product_name, amount, phone)\n" +
+                "VALUES ('" + order.getOrder() + "', '" + order.getAmount() + "', '" + order.getPhone() + "')";
+        if (dataBaseService.insert(sql)) {
+            isSuccess = true;
+        } else {
+            isSuccess = false;
+        }
+        return isSuccess;
     }
 }
