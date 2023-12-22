@@ -37,7 +37,10 @@
         .btn-group {
             display: flex;
         }
-
+        .btn-primary {
+            background-color: #657d9c;
+            color: #fff;
+        }
         .btn-group a, .btn-group form {
             margin-right: 10px;
         }

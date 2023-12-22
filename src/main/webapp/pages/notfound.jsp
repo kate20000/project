@@ -10,7 +10,7 @@
             background-color: #f8f9fa;
             margin: 20px;
             text-align: center;
-            color: #007bff;
+            color: #657d9c;
         }
 
         h2 {

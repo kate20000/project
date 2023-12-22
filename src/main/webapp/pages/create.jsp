@@ -92,7 +92,7 @@
         </div>
         <div class="row">
             <label for="date">Дата</label>
-            <input type="date" value="2023-12-23" name="date" class="form-control" id="date">
+            <input type="date" name="date" class="form-control" id="date">
         </div>
         <div class="row">
             <label for="time">Время</label>
@@ -102,6 +102,12 @@
             <input type="submit" value="Отправить">
         </div>
     </form>
+    <script>
+        var currentDate = new Date();
+        var dateString = currentDate.toISOString().slice(0,10);
+        document.getElementById('date').value = dateString;
+        document.getElementById('date').min = dateString;
+    </script>
 </div>
 </body>
 </html>

@@ -12,7 +12,7 @@
         }
         h2 {
             text-align: center;
-            color: black;
+            color: #657d9c;
         }
         table {
             width: 100%;
@@ -25,7 +25,7 @@
             text-align: center;
             padding: 8px;
         }
-        
+
         a {
             text-decoration: none;
         }
