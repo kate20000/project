@@ -29,3 +29,14 @@ CREATE TABLE public.sessions (
                                  "session" varchar(255) NOT NULL,
                                  CONSTRAINT session_pkey PRIMARY KEY (login)
 );
+CREATE TABLE public.orders (
+                               order_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1 NO CYCLE),
+                               product_name varchar NULL,
+                               amount int4 NULL,
+                               phone varchar NULL
+);
+CREATE TABLE public.products (
+                                 product_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1 NO CYCLE),
+                                 product varchar NULL,
+                                 price int4 NULL
+);
